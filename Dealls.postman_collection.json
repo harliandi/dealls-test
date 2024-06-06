@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "754f91fb-cdb4-4a5a-a0d5-9dc87312a97d",
+		"name": "Dealls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1164869"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"harliandi@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Harliandi\",\n    \"email\":\"harliandi04@gmail.com\",\n    \"password\": \"password\",\n    \"gender\": \"male\", //male or female\n    \"birth_date\": \"2024-04-02\" // YYYY-MM-DD\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3001/signup",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3001",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

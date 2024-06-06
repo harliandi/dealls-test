@@ -1,0 +1,26 @@
+title Dealls API Test
+
+User->API:User Signup
+note over User,API:name, email, password, gender, birth-date
+API->DB:Store user data
+note over API,DB:name, email, password-hashed, gender, birth-date
+API<-DB:Return result after store data
+User<-API:Inform user register success
+
+User->API:User Login
+note over User,API:email, password
+API->DB:Check if user exist and compare password hash, return user data and if true
+note over API,DB:email, password-hashed
+API->>Redis:Store Token Auth
+User<-API:Return token data to user
+note over User,API:token
+
+User->API:Get Profiles
+API->DB:Get List Data Profiles for Today
+API<-DB:Return data
+User<-API:Show data to user
+User->API:Swipe profile left/right
+note over User,API:token, profile_id, swipe_profile_id, swipe_status
+API->Redis:Check token status
+API<--Redis:Return token Status
+API->>DB:Save action swipe to DB
